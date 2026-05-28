@@ -49,6 +49,84 @@ Columns:
     2015-01-01 and earn more than 80,000?
 
 
+## Business Questions & Queries
+
+1. Which employees earn 120,000 or more?
+   
+``` sql
+SELECT * FROM employees
+WHERE salary >= 120000;
+```
+
+2. What are the full details of employee number 1005?
+   
+```sql
+SELECT * FROM employees
+WHERE employee_number = 1005;
+```
+
+3. Who works in the IT department?
+   
+```sql
+SELECT * FROM employees
+WHERE department = 'IT';
+```
+
+4. Which female employees are in the Finance department?
+
+```sql
+SELECT * FROM employees
+WHERE gender = 'Female'
+AND department = 'Finance';
+```
+
+5. Which employees earn between 70,000 and 90,000?
+   
+```sql
+SELECT * FROM employees
+WHERE salary BETWEEN 70000 AND 90000;
+```
+
+6. Which employees are not currently Active?
+
+```sql
+SELECT * FROM employees
+WHERE employment_status != 'Active';
+```
+
+7. Who holds a Management position?
+
+```sql
+SELECT * FROM employees
+WHERE job_title LIKE '%Manager%';
+```
+
+8. Which employees work in Sales, Marketing, or Operations?
+   
+```sql
+SELECT * FROM employees
+WHERE department IN ('Sales', 'Marketing', 'Operations');
+```
+
+9. Which employees have a first name starting with "A"?
+    
+```sql
+SELECT * FROM employees
+WHERE first_name LIKE 'A%';
+```
+
+10. Which male employees in Sales or IT were hired after
+    2015-01-01 and earn more than 80,000?
+    
+```sql
+SELECT * FROM employees
+WHERE gender = 'Male'
+AND department IN ('Sales', 'IT')
+AND hire_date > '2015-01-01'
+AND salary > 80000;
+```
+
+
 ## SQL Concepts Used
 
 - SELECT, WHERE
